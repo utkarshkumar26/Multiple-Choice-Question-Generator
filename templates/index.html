@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate MCQs</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Add Google Fonts -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Use Google Font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #ffefba, #ffffff); /* Add gradient background */
+        }
+        .container {
+            text-align: center;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 500px; /* Limit width */
+            transition: transform 0.2s; /* Add hover effect */
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p.lead {
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .form-control-file {
+            display: inline-block;
+        }
+        .form-group {
+            text-align: left;
+            background-color: #e3f2fd; /* Light blue background */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        button.btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button.btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Generate MCQs</h1>
+        <p class="lead">This application generates multiple-choice questions (MCQs) based on the provided text. You can either upload a PDF or TXT file containing the text.</p>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload File(s) (PDF or TXT)</label>
+                <input type="file" class="form-control-file" id="file" name="files[]" multiple>
+            </div>
+            <div class="form-group">
+                <label for="num_questions">Number of Questions:</label>
+                <select class="form-control" id="num_questions" name="num_questions">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate MCQs</button>
+        </form>
+    </div>
+</body>
+</html>
