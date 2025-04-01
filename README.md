@@ -6,35 +6,6 @@ Our project aims to generate multiple-choice questions (MCQs) using machine lear
 
 
 
-# Part 2:
-
-# code:
-
-# Load English tokenizer, tagger, parser, NER, and word vectors
-nlp = spacy.load("en_core_web_sm")
-
-# input text
-
-text = """
-The Greek historian knew what he was talking about. The Nile River fed Egyptian civilization for hundreds of years. The Longest River the Nile is 4,160 miles long—the world’s longest river. It begins near the equator in Africa and flows north to the Mediterranean Sea. In the south the Nile churns with cataracts. A cataract is a waterfall. Near the sea the Nile branches into a delta. A delta is an area near a river’s mouth where the water deposits fine soil called silt. In the delta, the Nile divides into many streams. The river is called the upper Nile in the south and the lower Nile in the north. For centuries, heavy rains in Ethiopia caused the Nile to flood every summer. The floods deposited rich soil along the Nile’s shores. This soil was fertile, which means it was good for growing crops. Unlike the Tigris and Euphrates, the Nile River flooded at the same time every year, so farmers could predict when to plant their crops.
-"""
-
-num_questions=5
-
-# Process the text with spaCy
-
-doc = nlp(text)
-
-# Extract sentences from the text
-
-sentences = [sent.text for sent in doc.sents]
-
-# Randomly select sentences to form questions
-
-selected_sentences = random.sample(sentences, min(num_questions, len(sentences)))
-selected_sentences
-
-
 # Explanation of the Code:
 
 # Loading Modules:
